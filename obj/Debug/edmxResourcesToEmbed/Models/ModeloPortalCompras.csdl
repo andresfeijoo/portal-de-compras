@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalComprasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdjudicacionLicitacionProveedor">
+    <Key>
+      <PropertyRef Name="IdAdjudicacion" />
+    </Key>
+    <Property Name="IdAdjudicacion" Type="Int32" Nullable="false" />
+    <Property Name="IdLicitacion" Type="Int32" Nullable="false" />
+    <Property Name="IdCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="FormaPagoAdj" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="LicitacionCotizacionProv" Relationship="Self.FK_AdjudicacionLicitacionProveedor_LicitacionCotizacionProv" FromRole="AdjudicacionLicitacionProveedors" ToRole="LicitacionCotizacionProvs" />
+    <NavigationProperty Name="Licitacione" Relationship="Self.FK_AdjudicacionLicitacionProveedor_Licitaciones" FromRole="AdjudicacionLicitacionProveedors" ToRole="Licitaciones" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_AdjudicacionLicitacionProveedor_Producto" FromRole="AdjudicacionLicitacionProveedors" ToRole="Productoes" />
+  </EntityType>
+  <EntityType Name="LicitacionCotizacionProv">
+    <Key>
+      <PropertyRef Name="IdCotizacion" />
+    </Key>
+    <Property Name="IdCotizacion" Type="Int32" Nullable="false" />
+    <Property Name="IdLicitacion" Type="Int32" Nullable="false" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" />
+    <Property Name="FechaCotizacionProveedor" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PrecioUnitario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AdjudicacionLicitacionProveedors" Relationship="Self.FK_AdjudicacionLicitacionProveedor_LicitacionCotizacionProv" FromRole="LicitacionCotizacionProvs" ToRole="AdjudicacionLicitacionProveedors" />
+    <NavigationProperty Name="Licitacione" Relationship="Self.FK_LicitacionCotizacionProv_Licitaciones" FromRole="LicitacionCotizacionProvs" ToRole="Licitaciones" />
+    <NavigationProperty Name="Producto" Relationship="Self.FK_LicitacionCotizacionProv_Producto" FromRole="LicitacionCotizacionProvs" ToRole="Productoes" />
+    <NavigationProperty Name="Proveedor" Relationship="Self.FK_LicitacionCotizacionProv_Proveedor" FromRole="LicitacionCotizacionProvs" ToRole="Proveedors" />
+  </EntityType>
+  <EntityType Name="Licitacione">
+    <Key>
+      <PropertyRef Name="IdLicitacion" />
+    </Key>
+    <Property Name="IdLicitacion" Type="Int32" Nullable="false" />
+    <Property Name="NombreLicitacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdLicitador" Type="Int32" Nullable="false" />
+    <Property Name="FechaCreacionLicitacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaCierreLicitacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaAdjudicacionLicitacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ObservacionesLicitacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AdjudicacionLicitacionProveedors" Relationship="Self.FK_AdjudicacionLicitacionProveedor_Licitaciones" FromRole="Licitaciones" ToRole="AdjudicacionLicitacionProveedors" />
+    <NavigationProperty Name="LicitacionCotizacionProvs" Relationship="Self.FK_LicitacionCotizacionProv_Licitaciones" FromRole="Licitaciones" ToRole="LicitacionCotizacionProvs" />
+    <NavigationProperty Name="Licitador" Relationship="Self.FK_Licitaciones_Licitador" FromRole="Licitaciones" ToRole="Licitadors" />
+  </EntityType>
+  <EntityType Name="Licitador">
+    <Key>
+      <PropertyRef Name="IdLicitador" />
+    </Key>
+    <Property Name="IdLicitador" Type="Int32" Nullable="false" />
+    <Property Name="IdOrganismoLicitante" Type="Int32" Nullable="false" />
+    <Property Name="NombreLicitador" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Licitaciones" Relationship="Self.FK_Licitaciones_Licitador" FromRole="Licitadors" ToRole="Licitaciones" />
+    <NavigationProperty Name="OrganismoLicitante" Relationship="Self.FK_Licitador_OrganismoLicitante" FromRole="Licitadors" ToRole="OrganismoLicitantes" />
+  </EntityType>
+  <EntityType Name="OrganismoLicitante">
+    <Key>
+      <PropertyRef Name="IdOrganismoLicitante" />
+    </Key>
+    <Property Name="IdOrganismoLicitante" Type="Int32" Nullable="false" />
+    <Property Name="NombreOrganismoLicitante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContactoOrganismoLicitante" Type="Int32" Nullable="false" />
+    <Property Name="DireccionOrganismoLicitante" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Licitadors" Relationship="Self.FK_Licitador_OrganismoLicitante" FromRole="OrganismoLicitantes" ToRole="Licitadors" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="NombreProducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DescripcionProducto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AdjudicacionLicitacionProveedors" Relationship="Self.FK_AdjudicacionLicitacionProveedor_Producto" FromRole="Productoes" ToRole="AdjudicacionLicitacionProveedors" />
+    <NavigationProperty Name="LicitacionCotizacionProvs" Relationship="Self.FK_LicitacionCotizacionProv_Producto" FromRole="Productoes" ToRole="LicitacionCotizacionProvs" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" />
+    <Property Name="NombreProveedor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUITProveedor" Type="Int32" Nullable="false" />
+    <Property Name="TelProveedor" Type="Int32" Nullable="false" />
+    <Property Name="CorreoProveedor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DomicilioProveedor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="LicitacionCotizacionProvs" Relationship="Self.FK_LicitacionCotizacionProv_Proveedor" FromRole="Proveedors" ToRole="LicitacionCotizacionProvs" />
+  </EntityType>
+  <Association Name="FK_AdjudicacionLicitacionProveedor_LicitacionCotizacionProv">
+    <End Role="LicitacionCotizacionProvs" Type="Self.LicitacionCotizacionProv" Multiplicity="1" />
+    <End Role="AdjudicacionLicitacionProveedors" Type="Self.AdjudicacionLicitacionProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LicitacionCotizacionProvs">
+        <PropertyRef Name="IdCotizacion" />
+      </Principal>
+      <Dependent Role="AdjudicacionLicitacionProveedors">
+        <PropertyRef Name="IdCotizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdjudicacionLicitacionProveedor_Licitaciones">
+    <End Role="Licitaciones" Type="Self.Licitacione" Multiplicity="1" />
+    <End Role="AdjudicacionLicitacionProveedors" Type="Self.AdjudicacionLicitacionProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Licitaciones">
+        <PropertyRef Name="IdLicitacion" />
+      </Principal>
+      <Dependent Role="AdjudicacionLicitacionProveedors">
+        <PropertyRef Name="IdLicitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdjudicacionLicitacionProveedor_Producto">
+    <End Role="Productoes" Type="Self.Producto" Multiplicity="1" />
+    <End Role="AdjudicacionLicitacionProveedors" Type="Self.AdjudicacionLicitacionProveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productoes">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="AdjudicacionLicitacionProveedors">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LicitacionCotizacionProv_Licitaciones">
+    <End Role="Licitaciones" Type="Self.Licitacione" Multiplicity="1" />
+    <End Role="LicitacionCotizacionProvs" Type="Self.LicitacionCotizacionProv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Licitaciones">
+        <PropertyRef Name="IdLicitacion" />
+      </Principal>
+      <Dependent Role="LicitacionCotizacionProvs">
+        <PropertyRef Name="IdLicitacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LicitacionCotizacionProv_Producto">
+    <End Role="Productoes" Type="Self.Producto" Multiplicity="1" />
+    <End Role="LicitacionCotizacionProvs" Type="Self.LicitacionCotizacionProv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productoes">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="LicitacionCotizacionProvs">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LicitacionCotizacionProv_Proveedor">
+    <End Role="Proveedors" Type="Self.Proveedor" Multiplicity="1" />
+    <End Role="LicitacionCotizacionProvs" Type="Self.LicitacionCotizacionProv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedors">
+        <PropertyRef Name="IdProveedor" />
+      </Principal>
+      <Dependent Role="LicitacionCotizacionProvs">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Licitaciones_Licitador">
+    <End Role="Licitadors" Type="Self.Licitador" Multiplicity="1" />
+    <End Role="Licitaciones" Type="Self.Licitacione" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Licitadors">
+        <PropertyRef Name="IdLicitador" />
+      </Principal>
+      <Dependent Role="Licitaciones">
+        <PropertyRef Name="IdLicitador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Licitador_OrganismoLicitante">
+    <End Role="OrganismoLicitantes" Type="Self.OrganismoLicitante" Multiplicity="1" />
+    <End Role="Licitadors" Type="Self.Licitador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrganismoLicitantes">
+        <PropertyRef Name="IdOrganismoLicitante" />
+      </Principal>
+      <Dependent Role="Licitadors">
+        <PropertyRef Name="IdOrganismoLicitante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PortalComprasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdjudicacionLicitacionProveedors" EntityType="Self.AdjudicacionLicitacionProveedor" />
+    <EntitySet Name="LicitacionCotizacionProvs" EntityType="Self.LicitacionCotizacionProv" />
+    <EntitySet Name="Licitaciones" EntityType="Self.Licitacione" />
+    <EntitySet Name="Licitadors" EntityType="Self.Licitador" />
+    <EntitySet Name="OrganismoLicitantes" EntityType="Self.OrganismoLicitante" />
+    <EntitySet Name="Productoes" EntityType="Self.Producto" />
+    <EntitySet Name="Proveedors" EntityType="Self.Proveedor" />
+    <AssociationSet Name="FK_AdjudicacionLicitacionProveedor_LicitacionCotizacionProv" Association="Self.FK_AdjudicacionLicitacionProveedor_LicitacionCotizacionProv">
+      <End Role="LicitacionCotizacionProvs" EntitySet="LicitacionCotizacionProvs" />
+      <End Role="AdjudicacionLicitacionProveedors" EntitySet="AdjudicacionLicitacionProveedors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdjudicacionLicitacionProveedor_Licitaciones" Association="Self.FK_AdjudicacionLicitacionProveedor_Licitaciones">
+      <End Role="Licitaciones" EntitySet="Licitaciones" />
+      <End Role="AdjudicacionLicitacionProveedors" EntitySet="AdjudicacionLicitacionProveedors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdjudicacionLicitacionProveedor_Producto" Association="Self.FK_AdjudicacionLicitacionProveedor_Producto">
+      <End Role="Productoes" EntitySet="Productoes" />
+      <End Role="AdjudicacionLicitacionProveedors" EntitySet="AdjudicacionLicitacionProveedors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicitacionCotizacionProv_Licitaciones" Association="Self.FK_LicitacionCotizacionProv_Licitaciones">
+      <End Role="Licitaciones" EntitySet="Licitaciones" />
+      <End Role="LicitacionCotizacionProvs" EntitySet="LicitacionCotizacionProvs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicitacionCotizacionProv_Producto" Association="Self.FK_LicitacionCotizacionProv_Producto">
+      <End Role="Productoes" EntitySet="Productoes" />
+      <End Role="LicitacionCotizacionProvs" EntitySet="LicitacionCotizacionProvs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LicitacionCotizacionProv_Proveedor" Association="Self.FK_LicitacionCotizacionProv_Proveedor">
+      <End Role="Proveedors" EntitySet="Proveedors" />
+      <End Role="LicitacionCotizacionProvs" EntitySet="LicitacionCotizacionProvs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Licitaciones_Licitador" Association="Self.FK_Licitaciones_Licitador">
+      <End Role="Licitadors" EntitySet="Licitadors" />
+      <End Role="Licitaciones" EntitySet="Licitaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Licitador_OrganismoLicitante" Association="Self.FK_Licitador_OrganismoLicitante">
+      <End Role="OrganismoLicitantes" EntitySet="OrganismoLicitantes" />
+      <End Role="Licitadors" EntitySet="Licitadors" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

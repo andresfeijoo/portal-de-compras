@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PortalCompras.Models.AdjudicacionLicitacionProveedor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FormaPagoAdj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicitacionCotizacionProv.IdCotizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Licitacione.NombreLicitacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormaPagoAdj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicitacionCotizacionProv.IdCotizacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Licitacione.NombreLicitacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.NombreProducto)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdAdjudicacion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdAdjudicacion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdAdjudicacion })
+        </td>
+    </tr>
+}
+
+</table>

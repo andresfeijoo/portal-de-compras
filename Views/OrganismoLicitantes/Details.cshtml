@@ -1,0 +1,43 @@
+﻿@model PortalCompras.Models.OrganismoLicitante
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrganismoLicitante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreOrganismoLicitante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreOrganismoLicitante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactoOrganismoLicitante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactoOrganismoLicitante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionOrganismoLicitante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionOrganismoLicitante)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdOrganismoLicitante }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

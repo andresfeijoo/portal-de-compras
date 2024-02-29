@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PortalCompras.Models.OrganismoLicitante>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreOrganismoLicitante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactoOrganismoLicitante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DireccionOrganismoLicitante)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreOrganismoLicitante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactoOrganismoLicitante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DireccionOrganismoLicitante)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdOrganismoLicitante }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdOrganismoLicitante }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdOrganismoLicitante })
+        </td>
+    </tr>
+}
+
+</table>

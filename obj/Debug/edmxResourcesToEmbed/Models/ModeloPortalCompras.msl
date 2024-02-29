@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortalComprasModelStoreContainer" CdmEntityContainer="PortalComprasEntities">
+    <EntitySetMapping Name="AdjudicacionLicitacionProveedors">
+      <EntityTypeMapping TypeName="PortalComprasModel.AdjudicacionLicitacionProveedor">
+        <MappingFragment StoreEntitySet="AdjudicacionLicitacionProveedors">
+          <ScalarProperty Name="IdAdjudicacion" ColumnName="IdAdjudicacion" />
+          <ScalarProperty Name="IdLicitacion" ColumnName="IdLicitacion" />
+          <ScalarProperty Name="IdCotizacion" ColumnName="IdCotizacion" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="FormaPagoAdj" ColumnName="FormaPagoAdj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicitacionCotizacionProvs">
+      <EntityTypeMapping TypeName="PortalComprasModel.LicitacionCotizacionProv">
+        <MappingFragment StoreEntitySet="LicitacionCotizacionProvs">
+          <ScalarProperty Name="IdCotizacion" ColumnName="IdCotizacion" />
+          <ScalarProperty Name="IdLicitacion" ColumnName="IdLicitacion" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="FechaCotizacionProveedor" ColumnName="FechaCotizacionProveedor" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licitaciones">
+      <EntityTypeMapping TypeName="PortalComprasModel.Licitacione">
+        <MappingFragment StoreEntitySet="Licitaciones">
+          <ScalarProperty Name="IdLicitacion" ColumnName="IdLicitacion" />
+          <ScalarProperty Name="NombreLicitacion" ColumnName="NombreLicitacion" />
+          <ScalarProperty Name="IdLicitador" ColumnName="IdLicitador" />
+          <ScalarProperty Name="FechaCreacionLicitacion" ColumnName="FechaCreacionLicitacion" />
+          <ScalarProperty Name="FechaCierreLicitacion" ColumnName="FechaCierreLicitacion" />
+          <ScalarProperty Name="FechaAdjudicacionLicitacion" ColumnName="FechaAdjudicacionLicitacion" />
+          <ScalarProperty Name="ObservacionesLicitacion" ColumnName="ObservacionesLicitacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Licitadors">
+      <EntityTypeMapping TypeName="PortalComprasModel.Licitador">
+        <MappingFragment StoreEntitySet="Licitadors">
+          <ScalarProperty Name="IdLicitador" ColumnName="IdLicitador" />
+          <ScalarProperty Name="IdOrganismoLicitante" ColumnName="IdOrganismoLicitante" />
+          <ScalarProperty Name="NombreLicitador" ColumnName="NombreLicitador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganismoLicitantes">
+      <EntityTypeMapping TypeName="PortalComprasModel.OrganismoLicitante">
+        <MappingFragment StoreEntitySet="OrganismoLicitantes">
+          <ScalarProperty Name="IdOrganismoLicitante" ColumnName="IdOrganismoLicitante" />
+          <ScalarProperty Name="NombreOrganismoLicitante" ColumnName="NombreOrganismoLicitante" />
+          <ScalarProperty Name="ContactoOrganismoLicitante" ColumnName="ContactoOrganismoLicitante" />
+          <ScalarProperty Name="DireccionOrganismoLicitante" ColumnName="DireccionOrganismoLicitante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productoes">
+      <EntityTypeMapping TypeName="PortalComprasModel.Producto">
+        <MappingFragment StoreEntitySet="Productoes">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+          <ScalarProperty Name="DescripcionProducto" ColumnName="DescripcionProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedors">
+      <EntityTypeMapping TypeName="PortalComprasModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedors">
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="NombreProveedor" ColumnName="NombreProveedor" />
+          <ScalarProperty Name="CUITProveedor" ColumnName="CUITProveedor" />
+          <ScalarProperty Name="TelProveedor" ColumnName="TelProveedor" />
+          <ScalarProperty Name="CorreoProveedor" ColumnName="CorreoProveedor" />
+          <ScalarProperty Name="DomicilioProveedor" ColumnName="DomicilioProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,67 @@
+﻿@model PortalCompras.Models.Licitacione
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Licitacione</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreLicitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreLicitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacionLicitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacionLicitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCierreLicitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCierreLicitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaAdjudicacionLicitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaAdjudicacionLicitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObservacionesLicitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObservacionesLicitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Licitador.NombreLicitador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Licitador.NombreLicitador)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdLicitacion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

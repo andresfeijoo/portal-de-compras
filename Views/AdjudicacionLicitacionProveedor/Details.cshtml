@@ -1,0 +1,51 @@
+﻿@model PortalCompras.Models.AdjudicacionLicitacionProveedor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AdjudicacionLicitacionProveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FormaPagoAdj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormaPagoAdj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LicitacionCotizacionProv.IdCotizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LicitacionCotizacionProv.IdCotizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Licitacione.NombreLicitacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Licitacione.NombreLicitacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.NombreProducto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdAdjudicacion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

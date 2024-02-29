@@ -1,0 +1,35 @@
+﻿@model PortalCompras.Models.Licitador
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Licitador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreLicitador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreLicitador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganismoLicitante.NombreOrganismoLicitante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganismoLicitante.NombreOrganismoLicitante)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdLicitador }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
