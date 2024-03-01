@@ -449,7 +449,7 @@ namespace PortalCompras.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "OrganismoLicitantes");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
