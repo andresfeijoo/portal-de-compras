@@ -1,15 +1,15 @@
 ﻿@model PortalCompras.Models.AdjudicacionLicitacionProveedor
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Adjudicación";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+
+<h2>¿Esta seguro que desea borrar?</h2>
 <div>
-    <h4>AdjudicacionLicitacionProveedor</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -50,8 +50,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
         </div>
     }
 </div>

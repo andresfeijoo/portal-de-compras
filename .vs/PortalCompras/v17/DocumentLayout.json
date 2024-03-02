@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\afeij\\OneDrive\\Escritorio\\PortalCompras\\portal-de-compras\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{B2B7E8AF-DFBB-423A-AC92-AA72C4847C5B}|PortalCompras.csproj|c:\\users\\afeij\\onedrive\\escritorio\\portalcompras\\portal-de-compras\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2B7E8AF-DFBB-423A-AC92-AA72C4847C5B}|PortalCompras.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2B7E8AF-DFBB-423A-AC92-AA72C4847C5B}|PortalCompras.csproj|c:\\users\\afeij\\onedrive\\escritorio\\portalcompras\\portal-de-compras\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B2B7E8AF-DFBB-423A-AC92-AA72C4847C5B}|PortalCompras.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,32 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\afeij\\OneDrive\\Escritorio\\PortalCompras\\portal-de-compras\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\afeij\\OneDrive\\Escritorio\\PortalCompras\\portal-de-compras\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-29T23:49:28.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\afeij\\OneDrive\\Escritorio\\PortalCompras\\portal-de-compras\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\afeij\\OneDrive\\Escritorio\\PortalCompras\\portal-de-compras\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAALUBAAAAAAAAAAAjwMMBAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-29T23:43:46.959Z",
-              "EditorCaption": ""
             }
           ]
         }
