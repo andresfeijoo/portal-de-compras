@@ -5,12 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="cd366d79b1e249de8036b32fb963b95c" Name="Diagram1">
-        <EntityTypeShape EntityType="PortalComprasModel.AdjudicacionLicitacionProveedor" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PortalComprasModel.LicitacionCotizacionProv" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalComprasModel.AdjudicacionLicitacionProveedor" Width="1.5" PointX="2.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalComprasModel.LicitacionCotizacionProv" Width="1.5" PointX="8.125" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalComprasModel.Licitacione" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalComprasModel.Licitador" Width="1.5" PointX="1.5" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalComprasModel.OrganismoLicitante" Width="1.5" PointX="1.5" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="PortalComprasModel.Producto" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PortalComprasModel.Producto" Width="1.5" PointX="5.5" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PortalComprasModel.Proveedor" Width="1.5" PointX="3.75" PointY="8.5" IsExpanded="true" />
         <AssociationConnector Association="PortalComprasModel.FK_AdjudicacionLicitacionProveedor_LicitacionCotizacionProv" ManuallyRouted="false" />
         <AssociationConnector Association="PortalComprasModel.FK_AdjudicacionLicitacionProveedor_Licitaciones" ManuallyRouted="false" />

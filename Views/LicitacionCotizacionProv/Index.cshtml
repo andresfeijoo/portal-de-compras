@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PortalCompras.Models.LicitacionCotizacionProv>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cotizaciones";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
@@ -48,9 +48,11 @@
             @Html.DisplayFor(modelItem => item.Proveedor.NombreProveedor)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCotizacion }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCotizacion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCotizacion })
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdCotizacion }) |
+            @Html.ActionLink("Detalle", "Details", new { id = item.IdCotizacion }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.IdCotizacion })|
+            @Html.ActionLink("Proveedor", "Index", "Proveedor", new { Id = item.IdCotizacion }, null)|
+            @Html.ActionLink("Producto", "Index", "Producto", new { Id = item.IdCotizacion }, null)
         </td>
     </tr>
 }

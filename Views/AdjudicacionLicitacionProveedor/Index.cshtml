@@ -42,9 +42,10 @@
             @Html.DisplayFor(modelItem => item.Producto.NombreProducto)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdAdjudicacion }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.IdAdjudicacion }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.IdAdjudicacion })
+            @Html.ActionLink("Editar", "Edit", new { id = item.IdAdjudicacion }) |
+            @Html.ActionLink("Detalle", "Details", new { id = item.IdAdjudicacion }) |
+            @Html.ActionLink("Borrar", "Delete", new { id = item.IdAdjudicacion })|
+            @Html.ActionLink("Producto", "Index", "Producto", new { Id = item.IdAdjudicacion }, null)
         </td>
     </tr>
 }

@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<PortalCompras.Models.Licitacione>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Licitaciones";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
@@ -33,32 +33,35 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreLicitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaCreacionLicitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaCierreLicitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaAdjudicacionLicitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ObservacionesLicitacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Licitador.NombreLicitador)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdLicitacion }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdLicitacion }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdLicitacion })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreLicitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacionLicitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCierreLicitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaAdjudicacionLicitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObservacionesLicitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Licitador.NombreLicitador)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdLicitacion }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.IdLicitacion }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.IdLicitacion })
+                @Html.ActionLink("Cotizaciones", "Index", "LicitacionCotizacionProv", new { Id = item.IdLicitacion }, null)
+                @Html.ActionLink("Adjudicaciones", "Index", "AdjudicacionLicitacionProveedor", new { Id = item.IdLicitacion }, null)
+            </td>
+        </tr>
+    }
 
 </table>
