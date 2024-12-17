@@ -27,6 +27,7 @@
     <EntitySetMapping Name="Licitaciones">
       <EntityTypeMapping TypeName="PortalComprasModel.Licitacione">
         <MappingFragment StoreEntitySet="Licitaciones">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
           <ScalarProperty Name="IdLicitacion" ColumnName="IdLicitacion" />
           <ScalarProperty Name="NombreLicitacion" ColumnName="NombreLicitacion" />
           <ScalarProperty Name="IdLicitador" ColumnName="IdLicitador" />
